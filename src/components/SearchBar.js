@@ -47,7 +47,7 @@ export default function SearchBar({ onSearch, error }) {
                 <RedTooltip className="searchBarInput" placeholder="Search for any IP address or domain" onChange={handleInputChange} open={tooltipOpen} TransitionComponent={Fade} ref={inputRef} title={`${error}`}  >
                     <InputText />
                 </RedTooltip>
-                <button className="searchBarButton" type="submit">
+                <button aria-label="Search" className="searchBarButton" type="submit">
                     <IconArrow />
                 </button>
             </div>

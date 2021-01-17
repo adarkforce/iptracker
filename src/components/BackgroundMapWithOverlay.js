@@ -7,7 +7,7 @@ export default function BackgroundMapWithOverlay({ ...props }) {
     return (
         <div {...props} className="backgroundContainer">
             <div className="imgContainer">
-                <img src={bgImage}></img>
+                <img alt={'https://c.pxhere.com/images/ff/d4/0ddf9c419caf04f6a35906db9b2e-1600625.jpg!d'} src={bgImage}></img>
             </div>
             <div className="locationMapWrapper">
                 <LocationMap position={props.location && props.location} />
