@@ -28,12 +28,12 @@
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
     transform: translateX(-100%);
-    background-color: hsl(0, 0%, 17%);
+    background-color: black;
     transition: all ease-in 200ms;
 }
 
 .searchBarButton:hover {
-    background-color: hsl(0, 0%, 10%);
+    background-color: hsl(0, 0%, 17%);
     cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
     width: auto;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .searchBarInput::placeholder {
         font-weight: 500;
         font-size: 12px;
