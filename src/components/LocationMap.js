@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import "./LocationMap.css";
-
-
+import IconLocation from '../images/icon-location.svg'
+import L from 'leaflet';
+const iconLocation = new L.Icon({
+    iconUrl: IconLocation,
+    iconRetinaUrl: IconLocation,
+    iconAnchor: null,
+    popupAnchor: null,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    popupAnchor: [-0, -0],
+    iconSize: [42, 52],
+    pane: null,
+    className: 'leaflet-div-icon'
+});
 export default function LocationMap({ position = [51.505, -0.09] }) {
     const [map, setMap] = useState()
 
@@ -23,7 +36,7 @@ export default function LocationMap({ position = [51.505, -0.09] }) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
             />
-            <Marker interactive position={position}>
+            <Marker icon={iconLocation} interactive position={position}>
                 <Popup zoomAnimation>
                     Your Location
                 </Popup>
