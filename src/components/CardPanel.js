@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import "./CardPanel.css";
 import Loader from './Loader';
-export default function CardPanel({ ipAddress, location, timezone, isp, loading }) {
 
+export default function CardPanel({ ipAddress, location, timezone, isp, loading }) {
 
     return (
         <div className="cardPanelWrapper">

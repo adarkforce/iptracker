@@ -17,21 +17,20 @@ const RedTooltip = withStyles(() => ({
 
     },
 }))(Tooltip);
+
+
 export default function SearchBar({ onSearch, error }) {
 
     const inputRef = useRef()
+    const [tooltipOpen, setTooltipOpen] = useState(true)
 
     const handleOnSearch = (e) => {
         e.preventDefault()
         inputRef && inputRef.current !== null && onSearch(inputRef.current.value)
     }
-    const handleInputChange = (e) => {
-        console.log(inputRef.current.value)
-    }
-    const [tooltipOpen, setTooltipOpen] = useState(true)
+
 
     React.useEffect(() => {
-        console.log("ERROR CHANGED ", error)
         error && setTooltipOpen(true)
         !error && setTooltipOpen(false)
         let timeoutId = setTimeout(() => {
@@ -44,7 +43,7 @@ export default function SearchBar({ onSearch, error }) {
     return (
         <form onSubmit={handleOnSearch}>
             <div className="searchBarWrapper">
-                <RedTooltip className="searchBarInput" placeholder="Search for any IP address or domain" onChange={handleInputChange} open={tooltipOpen} TransitionComponent={Fade} ref={inputRef} title={`${error}`}  >
+                <RedTooltip className="searchBarInput" placeholder="Search for any IP address or domain" open={tooltipOpen} TransitionComponent={Fade} ref={inputRef} title={`${error}`}  >
                     <InputText />
                 </RedTooltip>
                 <button aria-label="Search" className="searchBarButton" type="submit">

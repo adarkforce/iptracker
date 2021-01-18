@@ -13,9 +13,6 @@ function App() {
     search(query)
   }
 
-  React.useEffect(() => {
-    console.log("IP INFO APP ", ipInfo)
-  }, [error])
   return (
     <div className="container">
       <div className="header">
